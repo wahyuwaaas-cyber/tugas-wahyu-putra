@@ -4,9 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>latihan javascript</title>
-     <link rel="stylesheet" href="tampilan.css">
+    <link rel="stylesheet" href="tampilan.css">
     <script src="script.js"></script>
+    <style>
+<style>
+.kontainer-gambar {
+    width: 300px;         
+    height: 200px;       
+    /* 1. HAPUS ATAU KOMENTARI overflow: hidden AGAR BINGKAI TIDAK TERPOTONG SAAT MEMBESAR */
+    /* overflow: hidden; */ 
+    border-radius: 8px;
+    display: inline-block;
+}
 
+.gambar-zoom {
+    width: 500px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    /* 2. PINDAHKAN BINGKAI KE SINI AGAR IKUT TERKENA EFEK TRANSFORM SCALE */
+    border: 5px solid burlywood; 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.kontainer-gambar:hover .gambar-zoom {
+    /* 3. Gambar dan Bingkai akan membesar bersamaan sebesar 1.5x */
+    transform: scale(1.5); 
+}
+
+.yakan:hover {
+    background-color: #5969f5 !important; 
+}
+
+.ya:hover{
+    color:burlywood !important;
+}
+
+.tombol:hover {
+    background-color: #2980b9; 
+}
+</style>
+    </style>
 </head>
 <body>
      <nav class="navbar">
@@ -14,30 +53,32 @@
         <ul class="nav-links">
             <li><a href='index.html'>halaman utama</a></li>
             <li><a href='resep.html '>resep makanan</a></li>
-            <li><a href='menu.html'>menu</a></li>
+            <li><a href='surat-izin.html'>surat izin</a></li>
             <li><a href='kontak.html'>kontak penjual</a></li>
         </ul>
 
     <h1>HALAMAN RESEP MAKANAN</h1>
     </nav>
-
-    <center>
-        <img src="download.webp" alt="Nasi Goreng" height="300px" width="400px">
+     <center><h1 style="color: burlywood;">HALAMAN RESEP MAKANAN</h1></center>
+     <center>
+        <div class="kontainer-gambar">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6p7WL7RRWv8TnMjvLDUNjWmwcMrvPFDAXhX4_jp77Kg&s=10" alt="Nasi Goreng" class="gambar-zoom">
+        </div></center>
   <hr>
-    <h2>Resep Nasi Goreng Mas Sabetiw</h2>
-    <p>
+    <h2 class="ya" style="background-color: rgb(7, 7, 94);">    Resep Nasi Goreng Mas Sabetiw</h2>
+    <p class="yakan" style="background-color: rgb(0, 162, 255);">
         Bahan-bahan:<br>
         - 2 piring nasi putih<br>
         - 2 butir telur<br>
         - 3 siung bawang putih, cincang halus<br>
         - 2 buah cabai merah, iris tipis<br>
-        - 1 batang daun bawang, iris tipis<br>
+        - 1 batang daun bawang, iris tipis<br>  
         - 2 sendok makan kecap manis<br>
         - Garam dan merica secukupnya<br>
         - Minyak goreng untuk menumis
     </p><hr>
-    <p>
-        Cara membuat:<br>
+    <h1 class="ya" style="background-color: rgb(7,7,94);">   Cara Membuat:</h1>
+    <p class="yakan" style="background-color: rgb(0, 162, 255);">
         1. Panaskan minyak goreng dalam wajan, tumis bawang putih hingga harum.<br>
         2. Masukkan cabai merah dan daun bawang, tumis sebentar.<br>
         3. Tambahkan telur, aduk hingga matang.<br>
@@ -48,10 +89,13 @@
     <h2 id="namapesanan">
         silahkan pesan sekarang, klik tombol dibawah ini untuk memesan
     </h2>
-    <button onclick="pesanSekarang()">Pesan Sekarang</button>  </center>
-    <!--Contoh Internal javaScript-->
+    <button class="tombol" onclick="pesanSekarang()">Pesan Sekarang</button>  
+
+    <!-- MENAMBAHKAN FUNGSI ALERT JAVASCRIPT -->
     <script>
-        alert("anda memasuki halaman resep")
+        function pesanSekarang() {
+            alert("Pesanan Nasi Goreng Mas Sabetiw berhasil diproses! Mohon tunggu sebentar.");
+        }
     </script>
 </body>
 </html>

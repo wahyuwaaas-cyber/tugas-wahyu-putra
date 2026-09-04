@@ -12,9 +12,3 @@ function tampilkanNama(){
     `;
 
 }
-function pesanSekarang(){
-    document.getElementById("namapesanan").innerHTML=
-    `
-    pesanan akan segera diantar ke alamat anda, terimakasih telah memesan
-    `;
-}
