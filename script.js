@@ -12,3 +12,12 @@ function tampilkanNama(){
     `;
 
 }
+
+function validasiForm() {
+    var tanggal = document.getElementById("tanggal").value;
+    var tanggal2= document.getElementById("tanggal2").value;
+    if (new Date(tanggal2) < new Date(tanggal)) {
+        alert("Tanggal kembali harus lebih awal dari tanggal berangkat.");
+    }
+    return true; 
+}
