@@ -11,10 +11,10 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $nis            =htmlspecialchars($_POST['nis']);
     $kelas          =htmlspecialchars($_POST['kelas']);
     $alasan         =htmlspecialchars($_POST['alasan']);
-    $tanggal        =date('d m Y',strtotime($_POST['tanggal']));
-    $tanggal2       =date('d m Y',strtotime($_POST['tanggal2']));
+    $tanggal        =date('d F Y',strtotime($_POST['tanggal']));
+    $tanggal2       =date('d F Y',strtotime($_POST['tanggal2']));
     $keterangan     =htmlspecialchars($_POST['keterangan']);
-    $tgl_sekarang   = date('d m Y');
+    $tgl_sekarang   = date('d F Y');
 
     //template halaman surat
 $html='
@@ -78,12 +78,12 @@ $html='
 <body>
     <div class="kop">
         <h2>SMK TEXMACO SEMARANG</h2>
-        <p>Jl. Raya Mangkang Kulon | Telp : (024) 224-123-987</p>
+        <p>Jalan Raya Mangkang Km 16 Semarang  50155 | Telp :(024) 8661966 / (024) 8661967</p>
     </div>
 
     <div class="title">SURAT IZIN MENINGGALKAN KELAS</div>
     <div class="content">
-        <p>yang bertanda tangan di bawah ini :</p>
+        <p>Yang bertanda tangan di bawah ini :</p>
         <table class="table-data">
             <tr>
                 <td width="130">Nama</td>
@@ -103,7 +103,7 @@ $html='
         </table>
 
         <p></p>Dengan ini mengajukan izin untuk meninggalkan kelas pada tanggal <b>'.$tanggal.'</b> sampai dengan tanggal <b>'.$tanggal2.'</b> dikarenakan <b>'.$alasan.'</b>.</p>
-        ' .($keterangan ?'<p>Detail Keterangan :'.$keterangan.'</p>' : '').'
+        ' .($keterangan ?'<p>Detail Keterangan  :  '.$keterangan.'</p>' : '').'
         <p>Demikian surat pengajuan izin ini saya buat dengan sebenar-benarnya, atas perhatian dan kebijaksanaannya saya ucapkan terima kasih.</p>
     </div>
     <div class="ttd-container">
